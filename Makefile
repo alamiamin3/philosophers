@@ -2,7 +2,7 @@ NAME = philo
 
 SRC = philo.c  philo_utils.c ./utils/ft_atoi.c ./utils/ft_strlen.c ./utils/ft_isdigit.c
 CC = gcc 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g -fsanitize=thread
 OBJS = ${SRC:%.c=%.o}
 
 all: ${NAME}

@@ -6,13 +6,13 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 19:31:11 by aalami            #+#    #+#             */
-/*   Updated: 2023/06/10 18:04:23 by aalami           ###   ########.fr       */
+/*   Updated: 2023/06/14 17:00:47 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-t_philo	*ft_new_philo(int index, char **argv)
+t_philo	*	ft_new_philo(int index, char **argv, long int sim_start)
 {
 	t_philo	*philo;
 
@@ -20,6 +20,7 @@ t_philo	*ft_new_philo(int index, char **argv)
 	if (!(philo))
 		return (0);
 	philo->index = index;
+	philo->nbr_of_philos = ft_atoi(argv[1]);
 	philo->time_to_die = ft_atoi(argv[2]);
 	philo->time_to_eat = ft_atoi(argv[3]);
 	philo->time_to_sleep = ft_atoi(argv[4]);
@@ -27,6 +28,7 @@ t_philo	*ft_new_philo(int index, char **argv)
 		philo->number_of_meals = ft_atoi(argv[5]);
 	else
 		philo->number_of_meals = -1;
+	philo->sim_start = sim_start;
 	philo->next = NULL;
 	return (philo);
 }
