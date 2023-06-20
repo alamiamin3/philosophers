@@ -6,7 +6,7 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 21:56:02 by aalami            #+#    #+#             */
-/*   Updated: 2023/06/14 16:59:54 by aalami           ###   ########.fr       */
+/*   Updated: 2023/06/20 04:26:26 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <pthread.h>
 # include <stdio.h>
+# include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <sys/time.h>
@@ -29,7 +30,9 @@ typedef struct s_philo
 	long long		number_of_meals;
 	long int		sim_start;
 	int				nbr_of_philos;
+	int				*died;
 	pthread_mutex_t fork;
+	pthread_mutex_t death;
 	struct s_philo	*next;
 }					t_philo;
 

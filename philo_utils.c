@@ -6,7 +6,7 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 19:31:11 by aalami            #+#    #+#             */
-/*   Updated: 2023/06/14 17:00:47 by aalami           ###   ########.fr       */
+/*   Updated: 2023/06/20 04:27:22 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,12 @@
 t_philo	*	ft_new_philo(int index, char **argv, long int sim_start)
 {
 	t_philo	*philo;
+	int	*died;
 
 	philo = malloc(sizeof(t_philo));
+	died = malloc(sizeof(int));
+	// died = &stat;
+	*died = 0;
 	if (!(philo))
 		return (0);
 	philo->index = index;
@@ -24,6 +28,7 @@ t_philo	*	ft_new_philo(int index, char **argv, long int sim_start)
 	philo->time_to_die = ft_atoi(argv[2]);
 	philo->time_to_eat = ft_atoi(argv[3]);
 	philo->time_to_sleep = ft_atoi(argv[4]);
+	philo->died = died;
 	if (argv[5])
 		philo->number_of_meals = ft_atoi(argv[5]);
 	else
