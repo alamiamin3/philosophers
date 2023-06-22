@@ -6,7 +6,7 @@
 /*   By: aalami <aalami@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 21:56:02 by aalami            #+#    #+#             */
-/*   Updated: 2023/06/20 04:26:26 by aalami           ###   ########.fr       */
+/*   Updated: 2023/06/22 02:35:43 by aalami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,13 @@ typedef struct s_philo
 	long long		time_to_sleep;
 	long long		number_of_meals;
 	long int		sim_start;
+	long long		starvation;
 	int				nbr_of_philos;
-	int				*died;
+	int				died;
+	int				finished;
 	pthread_mutex_t fork;
-	pthread_mutex_t death;
+	pthread_mutex_t *death;
+	pthread_mutex_t *action;
 	struct s_philo	*next;
 }					t_philo;
 
